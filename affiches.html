@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - Affiches | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .subpage-main {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 50px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: transform 0.3s;
+    }
+    .back-btn:hover {
+      transform: translateX(-5px);
+    }
+    .page-title {
+      font-family: 'Jaro', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin: 0 0 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .page-subtitle {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      margin-bottom: 60px;
+    }
+    .project-detail-block {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 80px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .project-media {
+      width: 100%;
+      height: 600px; /* Taller for posters */
+      border-radius: 16px;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .project-media object, .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .project-header h2 {
+      font-family: 'Jaro', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+      color: var(--text);
+    }
+    .project-header .year {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .project-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 60px;
+    }
+    @media (max-width: 900px) {
+      .project-content-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .project-main-info h3 {
+      font-family: 'Jaro', sans-serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .project-main-info p, .project-main-info ul {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+    .project-sidebar {
+      background: var(--surface-soft);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      height: fit-content;
+    }
+    .sidebar-item {
+      margin-bottom: 30px;
+    }
+    .sidebar-item h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+    }
+    .sidebar-item p {
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .tech-pill {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--surface);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin: 0 6px 8px 0;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+  </style>
+</head>
+<body class="day">
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="sidebar-structure"></div>
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="index.html#home" class="menu-link interactive-hover">Home</a>
+        <a href="index.html#about" class="menu-link interactive-hover">About</a>
+        <a href="index.html#skills" class="menu-link interactive-hover">Skills</a>
+        <a href="index.html#works" class="menu-link interactive-hover active">Works</a>
+        <a href="index.html#contact" class="menu-link interactive-hover">Contact</a>
+      </nav>
+      <div class="download-panel">
+        <a class="download-link interactive-hover" href="./Image_general/CV_Timothée_KibunduMwela.pdf" target="_blank" rel="noreferrer">
+          CV / Téléchargement
+        </a>
+      </div>
+    </aside>
+
+    <main class="content subpage-main">
+      <header class="toolbar">
+        <button id="modeToggle" class="mode-toggle interactive-hover" type="button">Mode Nuit</button>
+      </header>
+
+      <a href="index.html#works" class="back-btn">← Retour au portfolio</a>
+      
+      <div>
+        <h1 class="page-title">Affiches & Chartes</h1>
+        <p class="page-subtitle">Identités Visuelles, Création Graphique & Design Système</p>
+      </div>
+
+      <!-- Charte Logiciel GB -->
+      <article class="project-detail-block">
+        <div class="project-media">
+          <object data="./Image_works/Visuels/Charte%20graphique%20-%20Logiciel%20GB.pdf#page=1&view=FitH" type="application/pdf">
+            <p>Votre navigateur ne supporte pas la prévisualisation PDF. <a href="./Image_works/Visuels/Charte%20graphique%20-%20Logiciel%20GB.pdf" target="_blank" style="color: var(--accent);">Voir le PDF</a></p>
+          </object>
+        </div>
+        
+        <div class="project-header">
+          <h2>Logiciel GB</h2>
+          <span class="year">2024</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+            <p><strong>Le Brief :</strong> Établir la charte graphique complète d'un nouveau logiciel d'entreprise, visant à professionnaliser son image et uniformiser ses interfaces.</p>
+            
+            <p><strong>La Réalisation :</strong> Définition du logotype, des couleurs de marque, de la typographie et des composants d'interface. Le livrable est un document de référence pour les développeurs et l'équipe marketing.</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>Mon approche pour ce projet fut très méthodique. Un logiciel B2B nécessite de la rigueur et de la clarté. J'ai choisi une palette de couleurs sobres mais avec des accents vifs pour l'interface utilisateur. La typographie sélectionnée favorise la lisibilité prolongée sur écran. J'ai structuré la charte pour qu'elle serve de véritable "Design System" facilement appropriable par d'autres équipes.</p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Designer UI/UX & Graphiste</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/Illustrator.png" alt="Illustrator" class="tech-icon-small" title="Illustrator">
+                <img src="./Image_skills/InDesign.png" alt="InDesign" class="tech-icon-small" title="InDesign">
+                <img src="./Image_skills/Figma.png" alt="Figma" class="tech-icon-small" title="Figma">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- SAE Voyage -->
+      <article class="project-detail-block">
+        <div class="project-media">
+          <object data="./Image_works/Visuels/Charte%20graphique%20-%20SAE%20Voyage.pdf#page=1&view=FitH" type="application/pdf">
+            <p><a href="./Image_works/Visuels/Charte%20graphique%20-%20SAE%20Voyage.pdf" target="_blank" style="color: var(--accent);">Voir le PDF</a></p>
+          </object>
+        </div>
+        
+        <div class="project-header">
+          <h2>SAE Voyage</h2>
+          <span class="year">2024</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+            <p><strong>La Réalisation :</strong> Création d'une identité visuelle autour du thème du voyage. Concept créatif, déclinaison de l'image de marque sur différents supports et conception d'affiches promotionnelles.</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>L'objectif était de faire rêver tout en restant très informatif. J'ai travaillé sur la composition des affiches en utilisant la règle des tiers pour guider le regard vers les informations essentielles (dates, prix, destinations). Le choix photographique a été retravaillé sous Photoshop pour uniformiser l'étalonnage colorimétrique de la campagne.</p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Directeur Artistique</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/Photoshop.png" alt="Photoshop" class="tech-icon-small" title="Photoshop">
+                <img src="./Image_skills/Illustrator.png" alt="Illustrator" class="tech-icon-small" title="Illustrator">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Zestivo -->
+      <article class="project-detail-block">
+        <div class="project-media">
+          <object data="./Image_works/Visuels/Charte%20graphique%20-%20Zestivo.pdf#page=1&view=FitH" type="application/pdf">
+            <p><a href="./Image_works/Visuels/Charte%20graphique%20-%20Zestivo.pdf" target="_blank" style="color: var(--accent);">Voir le PDF</a></p>
+          </object>
+        </div>
+        
+        <div class="project-header">
+          <h2>Zestivo</h2>
+          <span class="year">2024</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+            <p><strong>La Réalisation :</strong> Identité pétillante pour un projet événementiel (Zestivo). Construction de l'ADN de la marque à travers un univers coloré et dynamique.</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>Pour "Zestivo", le mot d'ordre était le dynamisme. L'utilisation de couleurs agrumes (orange, jaune) était une évidence, mais il fallait les équilibrer avec des tons neutres pour éviter la surcharge visuelle. Les affiches créées dans ce cadre exploitent la typographie cinétique pour retranscrire l'énergie de l'événement en image fixe.</p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Graphiste Créa</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/Illustrator.png" alt="Illustrator" class="tech-icon-small" title="Illustrator">
+                <img src="./Image_skills/InDesign.png" alt="InDesign" class="tech-icon-small" title="InDesign">
+                <img src="./Image_skills/Canva.png" alt="Canva" class="tech-icon-small" title="Canva">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </main>
+  </div>
+  
+  <div id="p5Container" class="hero-canvas"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

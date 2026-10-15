@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - Sites | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .subpage-main {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 50px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: transform 0.3s;
+    }
+    .back-btn:hover {
+      transform: translateX(-5px);
+    }
+    .page-title {
+      font-family: 'Jaro', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin: 0 0 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .page-subtitle {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      margin-bottom: 60px;
+    }
+    .project-detail-block {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 80px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .project-media {
+      width: 100%;
+      height: 450px;
+      border-radius: 16px;
+      background: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .project-media img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .project-header h2 {
+      font-family: 'Jaro', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+      color: var(--text);
+    }
+    .project-header .year {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .project-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 60px;
+    }
+    @media (max-width: 900px) {
+      .project-content-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .project-main-info h3 {
+      font-family: 'Jaro', sans-serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .project-main-info p, .project-main-info ul {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+    .project-main-info ul {
+      padding-left: 20px;
+    }
+    .project-main-info li {
+      margin-bottom: 10px;
+    }
+    .project-sidebar {
+      background: var(--surface-soft);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      height: fit-content;
+    }
+    .sidebar-item {
+      margin-bottom: 30px;
+    }
+    .sidebar-item:last-child {
+      margin-bottom: 0;
+    }
+    .sidebar-item h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+    }
+    .sidebar-item p {
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .tech-pill {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--surface);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin: 0 6px 8px 0;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+  </style>
+</head>
+<body class="day">
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="sidebar-structure"></div>
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="index.html#home" class="menu-link interactive-hover">Home</a>
+        <a href="index.html#about" class="menu-link interactive-hover">About</a>
+        <a href="index.html#skills" class="menu-link interactive-hover">Skills</a>
+        <a href="index.html#works" class="menu-link interactive-hover active">Works</a>
+        <a href="index.html#contact" class="menu-link interactive-hover">Contact</a>
+      </nav>
+      <div class="download-panel">
+        <a class="download-link interactive-hover" href="./Image_general/CV_Timothée_KibunduMwela.pdf" target="_blank" rel="noreferrer">
+          CV / Téléchargement
+        </a>
+      </div>
+    </aside>
+
+    <main class="content subpage-main">
+      <header class="toolbar">
+        <button id="modeToggle" class="mode-toggle interactive-hover" type="button">Mode Nuit</button>
+      </header>
+
+      <a href="index.html#works" class="back-btn">← Retour au portfolio</a>
+      
+      <div>
+        <h1 class="page-title">Sites Internet</h1>
+        <p class="page-subtitle">Développement Web, Interfaces Responsive & Back-office</p>
+      </div>
+
+      <!-- AquaSite -->
+      <article class="project-detail-block">
+        <div class="project-media" style="position: relative;">
+          <button id="aquasitePrev" class="carousel-arrow arrow-left" aria-label="Précédent">‹</button>
+          <div id="aquasiteTrack" style="display: flex; height: 100%; width: 100%; overflow: hidden;">
+            <img src="./Image_works/Dev_Web/AquaSite/Accueil_Aquarium.png" alt="Accueil AquaSite" class="carousel-img">
+            <img src="./Image_works/Dev_Web/AquaSite/Connexion_Aquarium.png" alt="Connexion AquaSite" class="carousel-img">
+            <img src="./Image_works/Dev_Web/AquaSite/Donnees_Aquarium.png" alt="Donnees AquaSite" class="carousel-img">
+            <img src="./Image_works/Dev_Web/AquaSite/Infos_Aquarium.png" alt="Infos AquaSite" class="carousel-img">
+          </div>
+          <button id="aquasiteNext" class="carousel-arrow arrow-right" aria-label="Suivant">›</button>
+        </div>
+        
+        <div class="project-header">
+          <h2>AquaSite</h2>
+          <span class="year">2024</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+
+            <p><strong>Lien du GitHub :</strong> <a href="https://github.com/Ylefaw/AquaSite">Site AquaSite</a></p>
+            <p><strong>Le Brief :</strong> Créer une plateforme de gestion d'aquarium complète, allant de la conception de l'interface jusqu'à l'architecture de la base de données et la logique côté serveur.</p>
+            
+            <p><strong>La Réalisation :</strong> AquaSite a été réalisé avec HTML, CSS, PHP, Symfony, JavaScript et SQL. Ce projet présente une interface responsive, un espace administration sécurisé et une navigation fluide entre les différentes vues (gestion des espèces, capteurs d'eau, etc.).</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>Pour ce projet, mon objectif principal était de <em>simplifier la complexité</em>. La gestion de données environnementales et biologiques peut vite devenir illisible. J'ai donc pensé la structure de la base de données (SQL/Symfony) de manière modulaire, pour ensuite l'afficher via des dashboards épurés (HTML/CSS/JS).</p>
+            <ul>
+              <li>Mise en place d'une architecture MVC avec Symfony pour une maintenance facilitée.</li>
+              <li>Design UI axé sur des couleurs marines pour rappeler le domaine de l'aquariophilie.</li>
+              <li>Interactivité via JavaScript pour éviter les rechargements de page inutiles lors des petites modifications de données.</li>
+            </ul>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Développeur Full-Stack</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Année</h4>
+              <p>2024</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/symfony.png" alt="Symfony" class="tech-icon-small" title="Symfony">
+                <img src="./Image_skills/PHP.png" alt="PHP" class="tech-icon-small" title="PHP">
+                <img src="./Image_skills/SQL.png" alt="SQL" class="tech-icon-small" title="SQL">
+                <img src="./Image_skills/JS.png" alt="JavaScript" class="tech-icon-small" title="JavaScript">
+                <img src="./Image_skills/HTML.png" alt="HTML" class="tech-icon-small" title="HTML">
+                <img src="./Image_skills/CSS.png" alt="CSS" class="tech-icon-small" title="CSS">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- IDBaali -->
+      <article class="project-detail-block">
+        <div class="project-media" style="position: relative;">
+          <button id="idbaaliPrev" class="carousel-arrow arrow-left" aria-label="Précédent">‹</button>
+          <div id="idbaaliTrack" style="display: flex; height: 100%; width: 100%; overflow: hidden;">
+            <img src="./Image_works/Dev_Web/IDBaali/Accueil_IDBaali.png" alt="Accueil IDBaali" class="carousel-img">
+            <img src="./Image_works/Dev_Web/IDBaali/Administration_IDBaali.png" alt="Administration IDBaali" class="carousel-img">
+            <img src="./Image_works/Dev_Web/IDBaali/Creation_IDBaali.png" alt="Creation IDBaali" class="carousel-img">
+            <img src="./Image_works/Dev_Web/IDBaali/Utilisateur_IDBaali.png" alt="Utilisateur IDBaali" class="carousel-img">
+          </div>
+          <button id="idbaaliNext" class="carousel-arrow arrow-right" aria-label="Suivant">›</button>
+        </div>
+        
+        <div class="project-header">
+          <h2>IDBaali</h2>
+          <span class="year">2024</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+
+            <p><strong>Lien du GitHub :</strong> <a href="https://github.com/Ylefaw/idbaali">Site ID Baali</a></p>
+
+            <p><strong>Le Brief :</strong> Concevoir une plateforme créative attrayante servant de vitrine pour des services professionnels, avec un design moderne et impactant.</p>
+            
+            <p><strong>La Réalisation :</strong> Développement complet de l'interface avec un focus sur les animations et l'expérience utilisateur. L'intégration a été pensée mobile-first pour garantir une parfaite lisibilité sur tous les supports.</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>Le défi majeur d'IDBaali était de <em>capter l'attention instantanément</em>. J'ai choisi des contrastes forts et une typographie audacieuse. J'ai structuré le code CSS pour qu'il soit facilement maintenable, en utilisant des variables et des classes utilitaires. L'interactivité JavaScript a été ajoutée avec parcimonie pour souligner les actions de l'utilisateur sans alourdir la page.</p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Intégrateur & Développeur Front</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Année</h4>
+              <p>2024</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/JS.png" alt="JavaScript" class="tech-icon-small" title="JavaScript">
+                <img src="./Image_skills/HTML.png" alt="HTML" class="tech-icon-small" title="HTML">
+                <img src="./Image_skills/CSS.png" alt="CSS" class="tech-icon-small" title="CSS">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- UniGen -->
+      <article class="project-detail-block">
+        <div class="project-media" style="position: relative;">
+          <button id="unigenPrev" class="carousel-arrow arrow-left" aria-label="Précédent">‹</button>
+          <div id="unigenTrack" style="display: flex; height: 100%; width: 100%; overflow: hidden;">
+            <img src="./Image_works/Dev_Web/UniGen/Accueil_Unigen.png" alt="Accueil UniGen" class="carousel-img">
+            <img src="./Image_works/Dev_Web/UniGen/Activites_Unigen.png" alt="Activites UniGen" class="carousel-img">
+            <img src="./Image_works/Dev_Web/UniGen/Propos_Unigen.png" alt="Propos UniGen" class="carousel-img">
+            <img src="./Image_works/Dev_Web/UniGen/Soutenir_Unigen.png" alt="Soutenir UniGen" class="carousel-img">
+          </div>
+          <button id="unigenNext" class="carousel-arrow arrow-right" aria-label="Suivant">›</button>
+        </div>
+        
+        <div class="project-header">
+          <h2>UniGen</h2>
+          <span class="year">2023</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+
+            <p><strong>Lien du site :</strong> <a href=https://but1.mmi-iutsf.org/S1/2025_S1/groupe_f/accueil.html>Site Unigen</a></p>
+
+            <p><strong>Le Brief :</strong> </p>
+            
+            <p><strong>La Réalisation :</strong> </p>
+            
+            <h3>Processus de pensée</h3>
+            <p></p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Concepteur UI & Back-End</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Année</h4>
+              <p>2023</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/PHP.png" alt="PHP" class="tech-icon-small" title="PHP">
+                <img src="./Image_skills/SQL.png" alt="MySQL" class="tech-icon-small" title="MySQL">
+                <img src="./Image_skills/HTML.png" alt="HTML" class="tech-icon-small" title="HTML">
+                <img src="./Image_skills/CSS.png" alt="CSS" class="tech-icon-small" title="CSS">
+                <img src="./Image_skills/Figma.png" alt="Figma" class="tech-icon-small" title="Figma">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </main>
+  </div>
+  
+  <div id="p5Container" class="hero-canvas"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof setupCarousel === 'function') {
+        setupCarousel('aquasiteTrack', 'aquasitePrev', 'aquasiteNext', 'img', null, { autoplay: false });
+        setupCarousel('idbaaliTrack', 'idbaaliPrev', 'idbaaliNext', 'img', null, { autoplay: false });
+        setupCarousel('unigenTrack', 'unigenPrev', 'unigenNext', 'img', null, { autoplay: false });
+      }
+    });
+  </script>
+</body>
+</html>

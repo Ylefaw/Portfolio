@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets - Vidéos | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .subpage-main {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 50px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      transition: transform 0.3s;
+    }
+    .back-btn:hover {
+      transform: translateX(-5px);
+    }
+    .page-title {
+      font-family: 'Jaro', sans-serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      margin: 0 0 10px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+    .page-subtitle {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      margin-bottom: 60px;
+    }
+    .project-detail-block {
+      background: var(--card);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 80px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .project-media {
+      width: 100%;
+      height: 550px;
+      border-radius: 16px;
+      background: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .project-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    .project-header h2 {
+      font-family: 'Jaro', sans-serif;
+      font-size: 2.5rem;
+      margin: 0;
+      color: var(--text);
+    }
+    .project-header .year {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    .project-content-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 60px;
+    }
+    @media (max-width: 900px) {
+      .project-content-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .project-main-info h3 {
+      font-family: 'Jaro', sans-serif;
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin-top: 30px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .project-main-info p, .project-main-info ul {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+    .project-main-info ul {
+      padding-left: 20px;
+    }
+    .project-main-info li {
+      margin-bottom: 10px;
+    }
+    .project-sidebar {
+      background: var(--surface-soft);
+      padding: 30px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      height: fit-content;
+    }
+    .sidebar-item {
+      margin-bottom: 30px;
+    }
+    .sidebar-item h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+    }
+    .sidebar-item p {
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+    }
+    .tech-pill {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--surface);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin: 0 6px 8px 0;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+  </style>
+</head>
+<body class="day">
+  <div class="page-shell">
+    <aside class="sidebar">
+      <div class="sidebar-structure"></div>
+      <nav class="menu" aria-label="Navigation principale">
+        <a href="index.html#home" class="menu-link interactive-hover">Home</a>
+        <a href="index.html#about" class="menu-link interactive-hover">About</a>
+        <a href="index.html#skills" class="menu-link interactive-hover">Skills</a>
+        <a href="index.html#works" class="menu-link interactive-hover active">Works</a>
+        <a href="index.html#contact" class="menu-link interactive-hover">Contact</a>
+      </nav>
+      <div class="download-panel">
+        <a class="download-link interactive-hover" href="./Image_general/CV_Timothée_KibunduMwela.pdf" target="_blank" rel="noreferrer">
+          CV / Téléchargement
+        </a>
+      </div>
+    </aside>
+
+    <main class="content subpage-main">
+      <header class="toolbar">
+        <button id="modeToggle" class="mode-toggle interactive-hover" type="button">Mode Nuit</button>
+      </header>
+
+      <a href="index.html#works" class="back-btn">← Retour au portfolio</a>
+      
+      <div>
+        <h1 class="page-title">Contenu Vidéo</h1>
+        <p class="page-subtitle">Montage, Motion Design, Effets Visuels & Réalisation</p>
+      </div>
+
+      <!-- Backstage Zestivo -->
+      <article class="project-detail-block">
+        <div class="project-media">
+          <video controls preload="metadata">
+            <source src="./Image_works/Vidéos/Backstage_Zestivo.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+        </div>
+        
+        <div class="project-header">
+          <h2>Backstage Zestivo</h2>
+          <span class="year">2024</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+            <p><strong>Le Brief :</strong> Réaliser une vidéo récapitulative type "behind the scenes" pour l'événement Zestivo, afin d'alimenter les réseaux sociaux de la marque.</p>
+            
+            <p><strong>La Réalisation :</strong> Dérushage d'une grande quantité de séquences, montage rythmé calé sur la musique, et étalonnage des couleurs pour un rendu chaleureux et professionnel.</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>Le rythme est l'élément central d'une vidéo backstage. J'ai commencé par sélectionner la bande-son, car elle allait dicter les coupes. J'ai alterné entre des plans larges pour le contexte et des plans serrés sur les expressions des personnes pour créer de l'émotion. L'étalonnage sous Premiere Pro m'a permis de rattraper des problèmes d'éclairage de l'événement et d'homogénéiser le rendu global.</p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Monteur Vidéo</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/Premiere pro.png" alt="Premiere Pro" class="tech-icon-small" title="Premiere Pro">
+                <img src="./Image_skills/After Effect.png" alt="After Effects" class="tech-icon-small" title="After Effects">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Clip Plus maintenant -->
+      <article class="project-detail-block">
+        <div class="project-media">
+          <video controls preload="metadata">
+            <source src="./Image_works/Vidéos/plus%20maintenant.wav%20-%20Texte%20nouveau%20-%20%20-%20Sortie%20-%20Stereo%20Out.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+        </div>
+        
+        <div class="project-header">
+          <h2>Plus Maintenant</h2>
+          <span class="year">2024</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+            <p><strong>La Réalisation :</strong> Clip visuel expérimental accompagnant une production audio. Travail poussé sur le sound design et les transitions visuelles.</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>Pour cette vidéo, je voulais créer une atmosphère mélancolique. J'ai utilisé After Effects pour générer des effets visuels qui répondent aux fréquences audio de la piste. Le processus a consisté à lier étroitement la narration visuelle à la progression de la piste sonore, en utilisant des calques de réglage et du tracking pour incruster du texte de manière dynamique dans l'environnement.</p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Motion Designer & Monteur</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/After Effect.png" alt="After Effects" class="tech-icon-small" title="After Effects">
+                <img src="./Image_skills/Premiere pro.png" alt="Premiere Pro" class="tech-icon-small" title="Premiere Pro">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Video UniGen -->
+      <article class="project-detail-block">
+        <div class="project-media">
+          <video controls preload="metadata">
+            <source src="./Image_works/Vidéos/Video_Unigen.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+          </video>
+        </div>
+        
+        <div class="project-header">
+          <h2>Vidéo Promotionnelle UniGen</h2>
+          <span class="year">2023</span>
+        </div>
+
+        <div class="project-content-grid">
+          <div class="project-main-info">
+            <p><strong>La Réalisation :</strong> Vidéo promotionnelle courte destinée à présenter la plateforme UniGen à de nouveaux utilisateurs potentiels (étudiants et professeurs).</p>
+            
+            <h3>Processus de pensée</h3>
+            <p>L'enjeu d'une vidéo promo logicielle est de montrer l'interface sans ennuyer le spectateur. J'ai utilisé l'animation 2D sous After Effects pour créer des maquettes vectorielles de l'interface UniGen qui s'animent de manière fluide. Le motion design permet d'expliquer des concepts abstraits (comme l'architecture d'un cours en ligne) avec des formes simples. Le tout est enrobé par une voix off claire et des sous-titres animés.</p>
+          </div>
+          
+          <aside class="project-sidebar">
+            <div class="sidebar-item">
+              <h4>Rôle</h4>
+              <p>Motion Designer</p>
+            </div>
+            <div class="sidebar-item">
+              <h4>Outils & Tech</h4>
+              <div class="tech-icons-container">
+                <img src="./Image_skills/After Effect.png" alt="After Effects" class="tech-icon-small" title="After Effects">
+                <img src="./Image_skills/Illustrator.png" alt="Illustrator" class="tech-icon-small" title="Illustrator (Assets)">
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <div id="p5Container" class="hero-canvas"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
